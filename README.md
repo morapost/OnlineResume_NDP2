@@ -1,0 +1,1 @@
+﻿The Project is to create Online Resume using Javascripts Loops,Functions and JSON objects. This is a Project 2 of Udacity Nano Degree program for Front End Web Developer.
