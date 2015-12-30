@@ -4,13 +4,13 @@ var skills=["Cooking","Programming","Teaching","JS","Troubleshooting"];
 var bio={
 	"name" : name,
 	"role" : role,
-	"contacts": [{
+	"contacts": {
 		"mobile" : "989-460-9671",
 		"email" : "morapost@gmail.com",
 		"twitter" : "@morapost",
 		"github" : "morapost",
 		"location" : "Bangalore,Karnataka"
-}],
+},
 	"picURL" : "images/Bhushan.jpg",
 	"welmsg" : "Hello There!",
 	"skills" : skills
@@ -168,6 +168,16 @@ projects.display = function() {
     }
     projects.display();
 
+  
+    function  inName(name){
+      name=name.trim().split(" ");
+      name[0]=name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+      name[1]=name[1].toUpperCase();
+      var full_name=name[0] + " " + name[1];
+      return full_name;
+    }
+
+    $("#main").append(internationalizeButton);
 
 
 $("#mapDiv").append(googleMap);
