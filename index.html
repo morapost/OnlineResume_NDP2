@@ -47,33 +47,44 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   Google Map to your resume!
   -->
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> 
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+  <script src="js/jquery.singlePageNav.min.js"></script> 
 
   <meta name="viewport" content="width=device-width">
 </head>
 <body unresolved>
+ 	<div class="single-page-nav">
+<ul>
+<li><a href="#topContacts">About me</a></li>
+<li><a href="#workExperience">Work</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#education">Education</a></li>
+
+</ul>
+</div>
   <div id="main">
      <!-- You'll be deleting this line in the course -->
-
+    
     <!--
     Everything from here to the <script> tag below is the skeleton of your
     website. Your code will add information to each of the sections of the
     resume below. You can pretty easily figure out what each section will
     display by looking at the id or at what's written between the <h2> tags.
     -->
-    <div id="header" class="center-content clearfix">
+    <div id="header" class="center-content clearfix section">
       <ul id="topContacts" class='flex-box'></ul>
     </div>
     <div style='clear: both;'></div>
-    <div id="workExperience" class='gray'>
+    <div id="workExperience" class='gray section'>
       <h2>Work Experience</h2>
     </div>
-    <div id="projects">
+    <div id="projects" class="section">
       <h2>Projects</h2>
     </div>
-    <div id="education" class='gray'>
+    <div id="education" class='gray section'>
       <h2>Education</h2>
     </div>
-    <div id="mapDiv">
+    <div id="mapDiv" class="section">
       <h2>Where I've Lived and Worked</h2>
     </div>
     <div id="letsConnect" class='dark-gray'>
@@ -90,7 +101,24 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   -->
   <script src="js/resumeBuilder.js"></script>
 
+<script>
 
+            // Prevent console.log from generating errors in IE for the purposes of the demo
+            if ( ! window.console ) console = { log: function(){} };
+
+            // The actual plugin
+            $('.single-page-nav').singlePageNav({
+                offset: $('.single-page-nav').outerHeight(),
+                filter: ':not(.external)',
+                updateHash: true,
+                beforeStart: function() {
+                    console.log('begin scrolling');
+                },
+                onComplete: function() {
+                    console.log('done scrolling');
+                }
+            });
+        </script>
   <!--
   These scripts are written in JavaScript. You'll be breaking them down as part of
   a quiz. Essentially, the next few lines are checking to see if you have not

@@ -12,7 +12,7 @@ var bio={
 		"location" : "Bangalore,Karnataka"
 },
 	"picURL" : "images/Bhushan.jpg",
-	"welmsg" : "Hello There!",
+	"welmsg" : "I have been working in PeopleSoft for past 5 years and I have huge intrest in web development. I want to develop the websites which help everyone connects digitally and makes each one of us as a global citizen.",
 	"skills" : skills
 };
 
@@ -31,16 +31,16 @@ bio.display = function() {
 		$("#skills").append(formattedskills);
 	};
 
-	for(contact in bio.contacts) {
-		var formattedMobile = HTMLmobile.replace("%data%",bio.contacts[contact].mobile);
-		var formattedEmail = HTMLemail.replace("%data%",bio.contacts[contact].email);
-		var formattedGithub = HTMLgithub.replace("%contact%","Github").replace("%data%",bio.contacts[contact].github);
-		var formattedLocation =HTMLlocation.replace("%data%", bio.contacts[contact].location);
-		var formattedTwitter =HTMLtwitter.replace("%data%", bio.contacts[contact].twitter);
+	
+		var formattedMobile = HTMLmobile.replace("%data%",bio.contacts["mobile"]);
+		var formattedEmail = HTMLemail.replace("%data%",bio.contacts["email"]);
+		var formattedGithub = HTMLgithub.replace("%contact%","Github").replace("%data%",bio.contacts["github"]);
+		var formattedLocation =HTMLlocation.replace("%data%", bio.contacts["location"]);
+		var formattedTwitter =HTMLtwitter.replace("%data%", bio.contacts["twitter"]);
        	$("#footerContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter,formattedLocation);
 		$("#topContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter,formattedLocation);
 	
-	 };
+	 
 };
 
 bio.display();
