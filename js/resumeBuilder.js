@@ -1,9 +1,7 @@
-var name="Bhushan Manoharan";
-var role="Web Designer";
 var skills=["Cooking","Programming","Teaching","JS","Troubleshooting"];
 var bio={
-	"name" : name,
-	"role" : role,
+	"name" : "Bhushan Manoharan",
+	"role" : "Web Designer",
 	"contacts": {
 		"mobile" : "989-460-9671",
 		"email" : "morapost@gmail.com",
@@ -26,17 +24,17 @@ bio.display = function() {
 	$("#header").append(HTMLskillsStart);
 
 
-	for(skill in bio.skills) {
+	for(var skill in bio.skills) {
 		var formattedskills = HTMLskills.replace("%data%",bio.skills[skill]);
 		$("#skills").append(formattedskills);
-	};
+	}
 
 	
-		var formattedMobile = HTMLmobile.replace("%data%",bio.contacts["mobile"]);
-		var formattedEmail = HTMLemail.replace("%data%",bio.contacts["email"]);
-		var formattedGithub = HTMLgithub.replace("%contact%","Github").replace("%data%",bio.contacts["github"]);
-		var formattedLocation =HTMLlocation.replace("%data%", bio.contacts["location"]);
-		var formattedTwitter =HTMLtwitter.replace("%data%", bio.contacts["twitter"]);
+		var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
+		var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
+		var formattedGithub = HTMLgithub.replace("%contact%","Github").replace("%data%",bio.contacts.github);
+		var formattedLocation =HTMLlocation.replace("%data%", bio.contacts.location);
+		var formattedTwitter =HTMLtwitter.replace("%data%", bio.contacts.twitter);
        	$("#footerContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter,formattedLocation);
 		$("#topContacts").append(formattedMobile,formattedEmail,formattedGithub,formattedTwitter,formattedLocation);
 	
@@ -65,7 +63,7 @@ var work = {
 };
 
 function displaywork(){
-      for(job in work.jobs){
+      for(var job in work.jobs){
       $("#workExperience").append(HTMLworkStart);
       var formattedworkEmp=HTMLworkEmployer.replace("%data%",work.jobs[job].Employer);
       var formattedworkTitle=HTMLworkTitle.replace("%data%",work.jobs[job].Title);
@@ -84,15 +82,14 @@ var education = {
  			
 					{
 						"name" : "PSNA College of Engineering",
-						"location" : "Dindigul",
+						"location" : "Dindigul,Tamil Nadu",
 						"Degree" : "Bachelor of Engineering",
 						"Major" : "Electronics & Communication",
 						"GradYear" : "2009",
 						"URL" : "http://ieee.co.in"
 					}
 
-				]
-	,
+						],
 
 	"onlineCourses" : [
 	{
@@ -104,7 +101,7 @@ var education = {
 };
  education.display = function() {
 		
-	for(school in education.schools) {
+	for(var school in education.schools) {
 		$("#education").append(HTMLschoolStart);
 		
 		var formattedName = HTMLschoolName.replace("%data%",education.schools[school].name);
@@ -124,7 +121,7 @@ var education = {
                   var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
                  $(".education-entry:last").append(formattedonlineTitle + formattedonlineSchool,formattedonlineDate,formattedURL);
                 }
-}
+};
 education.display();
 
 var projects ={
@@ -152,7 +149,7 @@ var projects ={
 projects.display = function() {
 
       
-      for (project in projects.projwork){
+      for (var project in projects.projwork){
         $("#projects").append(HTMLprojectStart);
         var formattedProjectTitle=HTMLprojectTitle.replace("%data%",projects.projwork[project].Title);
         $(".project-entry:last").append(formattedProjectTitle);
@@ -165,7 +162,7 @@ projects.display = function() {
         
         
       }
-    }
+    };
     projects.display();
 
   
@@ -181,4 +178,3 @@ projects.display = function() {
 
 
 $("#mapDiv").append(googleMap);
-
