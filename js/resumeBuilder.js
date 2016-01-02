@@ -1,16 +1,16 @@
 var bio = {
     "name": 'Bhushan Manoharan',
-    "role": "Web Designer",
+    "role": 'Web Designer',
     "contacts": {
-        "mobile": "989-460-9671",
-        "email": "morapost@gmail.com",
-        "twitter": "@morapost",
-        "github": "morapost",
-        "location": "Bangalore,Karnataka"
+        "mobile": '989-460-9671',
+        "email": 'morapost@gmail.com',
+        "twitter": '@morapost',
+        "github": 'morapost',
+        "location": 'Bangalore,Karnataka'
     },
-    "biopic": "images/Bhushan.jpg",
-    "welcomeMessage": "I have been working in PeopleSoft for past 5 years and I have huge intrest in web development. I want to develop the websites which help everyone connects digitally and makes each one of us as a global citizen.",
-    "skills": ["Cooking", "Programming", "Teaching", "JS", "Troubleshooting"],
+    "biopic": 'images/Bhushan.jpg',
+    "welcomeMessage": 'I have been working in PeopleSoft for past 5 years and I have huge intrest in web development. I want to develop the websites which help everyone connects digitally and makes each one of us as a global citizen.',
+    "skills": ['Cooking', 'Programming', 'Teaching', 'JS', 'Troubleshooting'],
     "display": function() {
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
